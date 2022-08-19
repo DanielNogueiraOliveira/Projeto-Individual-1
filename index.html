@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Finaceiro</title>
+</head>
+
+<body>
+   <header class="cabecalho">
+    <div id="controle-financeiro">
+        <div>
+        <!-- linkar imagem -->
+            <img class="logo" src="assets/img/logo1.png">
+        </div>
+
+        <div class="text-controle">
+            <label>Controle financeiro</label>
+        </div>
+    </div>
+   </header>
+
+    <div class="conteudo-pricipal">
+        
+        <form>
+            <h1>Nova transação</h1>
+
+            <select name="operacao" required>
+                <option value>selecionar</option>
+                <option name="compra" value="-">Compra</option>
+                <option name="venda" value="+">Venda</option>
+            </select>
+         
+            <div>
+                <label>Nome da mercadoria</label></br>
+                <input name="nome" required="" type="text" placeholder="Mercadoria">
+            </div>
+
+            <div>
+                <label>Valor</label></br>
+                <!-- como abilitar moto $$ -->
+                <input name="valor" id="valor" required="" placeholder="Valor">
+            </div>
+        </form>
+
+        <button>Adicinar transação</button>
+    </div>
+    
+    <div class="extrato">
+      <!-- motrar e calcular extrato -->
+        <div class="extrato-de-transacoes">
+            <p>
+            </p><h3>Extrato de transações</h3>
+            <p></p>
+        </div>
+        <!-- add: total, valor, lucro e prejuizo-->
+        <table id="tabela"><h4 style="text-align: center; display: flow-root;">Nenhuma transação adicionada</h4></table>
+
+    </div>
+
+</body>
+
+</html>
