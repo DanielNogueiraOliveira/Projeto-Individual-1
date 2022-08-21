@@ -6,59 +6,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle Finaceiro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-   <header class="cabecalho">
-    <div id="controle-financeiro">
-        <div>
-        <!-- linkar imagem -->
-            <img class="logo" src="assets/img/logo1.png">
-        </div>
+    <header class="cabecalho">
+        <div class="controle-financeiro">
 
-        <div class="text-controle">
-            <label>Controle financeiro</label>
-        </div>
-    </div>
-   </header>
+            <div class="texto-imagem">
+                <img class="logo" src="assets/Logo.png" style="padding-left: 22px;">
+                <label class="text-controle">Controle financeiro</label>
+            </div>
+
+            <div class="botoes3">
+
+                <div class="botoesdesk">
+                    <div class="deskbt"><a>Cadastro de transações</a></div>
+                    <span class="pipe">|</span>
+                    <div class="deskbt"><a href="">Limpar dados</a></div>
+                    <span class="pipe"></span>
+                    <div class="deskbt"><a></a></div>
+                </div>
+                <div class="janela">
+                    <div>
+                        <div>
+                        <img class="hamburguer" src="assets/hamburguer icon.png">
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            <span class="x">X</span>
+                            <li>Cadastro de transações</li>
+                            <li>Limpar dados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+    </header>
 
     <div class="conteudo-pricipal">
-        
-        <form>
-            <h1>Nova transação</h1>
 
-            <select name="operacao" required>
-                <option value>selecionar</option>
-                <option name="compra" value="-">Compra</option>
-                <option name="venda" value="+">Venda</option>
-            </select>
-         
+        <form class="form-quadrado">
             <div>
-                <label>Nome da mercadoria</label></br>
-                <input name="nome" required="" type="text" placeholder="Mercadoria">
-            </div>
+                <h1>Nova transação</h1>
 
-            <div>
-                <label>Valor</label></br>
-                <!-- como abilitar moto $$ -->
-                <input name="valor" id="valor" required="" placeholder="Valor">
-            </div>
+                <div class="form-campo campo-pequeno">
+                    <label>Tipo de transação</label>
+                    <select name="operacao" required>
+                        <option value>selecionar</option>
+                        <option name="compra" value="-">Compra</option>
+                        <option name="venda" value="+">Venda</option>
+                    </select>
+
+                    <div class="form-campo field-grande">
+                        <label>Nome da mercadoria</label></br>
+                        <input name="nome" required="" type="text" placeholder="Mercadoria" value="">
+                    </div>
+
+                    <div class="form-campo campo-pequeno">
+                        <label>Valor</label></br>
+                        <!-- como abilitar moto $$ -->
+                        <input name="valor" id="valor" required="" placeholder="R$0,00" value="">
+                    </div>
+                    <button>Adicinar transação</button>
+                </div>
         </form>
 
-        <button>Adicinar transação</button>
     </div>
-    
-    <div class="extrato">
-      <!-- motrar e calcular extrato -->
-        <div class="extrato-de-transacoes">
-            <p>
-            </p><h3>Extrato de transações</h3>
-            <p></p>
-        </div>
-        <!-- add: total, valor, lucro e prejuizo-->
-        <table id="tabela"><h4 style="text-align: center; display: flow-root;">Nenhuma transação adicionada</h4></table>
+    <hr class="linha-INVISIVEL">
+    </hr>
 
-    </div>
+    <section class="Extrato">
+        <div class="extrato-de-transacoes" >
+            <p>
+            <h3>Extrato de transações</h3>
+            </p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="mercadoria-esquerda">Mercadoria</th>
+                    <th class="valor">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+ Lorem ipsum dolor sit amet consectetur </td>
+                    <td class="valor">R$ 12.999,99</td>
+                </tr>
+                <tr>
+                    <td>- Quis nostrud exercitation</td>
+                    <td class="valor">R$ 99,99</td>
+                </tr>
+                <tr>
+                    <td>+ Lorem ipsum </td>
+                    <td class="valor">R$ 9,99</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="vt" id="lc"></td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td class="total-esquerda">Total</td>
+                    <td class="valor-final">R$ 12.909,99 <br>[Lucro]</br></td>
+                </tr>
+            </tbody>
+
+        </table>
+    </section>
 
 </body>
 

@@ -1,6 +1,436 @@
-body{
+body {
     margin: 0;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
     display: block;
+}
+
+.texto-imagem {
+    width: 100%;
+    display: flex;
+    justify-content: inherit;
+    align-items: center;
+    padding-right: 22px;
+        max-width: 1112;
+}
+
+.linha-INVISIVEL {
+    margin-bottom: 1px;
+}
+
+.extrato-de-transacoes {
+    justify-content: center;
+    display: flex;
+}
+
+
+
+.th,
+td {
+    padding: 8px;
+    text-align: left;
+    font-weight: 400;
+    border-top: solid 1px #979797;
+
+}
+
+.tabela {
+    padding: 20px 20px 0px;
+    padding-right: 20px;
+    text-align: end;
+    width: 100%;
+
+}
+
+.mercadoria-esquerda {
+    display: flex;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.valor {
+    text-align: end;
+}
+
+.form-quadrado {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-quadrado .campo-envolvente {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-campo {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 0px 20px;
+}
+
+.form-quadrado button {
+    margin-top: 19.78px;
+    background: #333;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 22px;
+    margin: 22px;
+
+}
+
+.form-quadrado input,
+.form-quadrado select {
+    border: 1px solid #97979797;
+    border-radius: 4px;
+    height: 32px;
+}
+
+.form-quadrado label {
+    margin-bottom: 2px;
+}
+
+.form-quadrado h1 {
+    display: none;
+
+}
+
+
+.hamburguer {
+    height: 35px;
+    padding-right: 20px;
+}
+.x{
+    padding-left: 22px;
+}
+.janela {
+    padding-right: 27px;
+}
+
+.janela ul {
+    list-style-type: none;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    height: 100%;
+    width: 85.4%;
+    right: 0px;
+    top: 0px;
+    margin: 0px;
+    padding: 20px 0;
+    font-size: 16px;
+    display: none;
+    z-index: 2;
+}
+
+.janela ul li:nth-child(1) {
+    text-align: left;
+}
+
+.janela ul li {
+    text-align: right;
+    margin: 7px 0;
+    padding: 0 20px;
+
+}
+
+.janela ul li:hover {
+    background-color: #c4c4c4;
+    color: #333;
+}
+
+.janela ul li:nth-child(1) {
+    background-color: #333;
+    color: white;
+}
+
+.janela:hover ul {
+    display: block;
+}
+
+.botoesdesk {
+    display: none;
+}
+
+
+.conteudo-pricipal {
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.cabecalho {
+    width: 100%;
+    height: 80px;
+    background-color: #E0E0E0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+
+}
+
+.text-controle {
+
+    font-size: 20px;
+    padding-left: 22px;
+
+}
+
+.total-esquerda {
+    padding: 1px;
+    font-weight: 700;
+}
+
+.texto-retangulo {
+    height: 20px;
+    top: 20px;
+    left: 113px;
+    font-weight: 700;
+    font-size: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.valor-final {
+    text-align: end;
+    font-weight: 700;
+}
+
+.vt {
+    border-bottom: #979797 solid 1px;
+    padding: 1px;
+}
+
+.controle-financeiro {
+    display: contents;
+}
+
+@media screen and (min-width: 768px) {
+    .cabecalho {
+        width: 100%;
+    }
+
+    .form-quadrado h1 {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .conteudo-pricipal {
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    .texto-imagem {
+        width: 100%;
+        display: flex;
+
+        align-items: center;
+        justify-content: initial;
+        max-width: 1112px;
+    }
+
+    .logo {
+
+        padding-left: 22px;
+        max-width: 1112;
+    }
+
+    .janela {
+        padding-right: 27px;
+    }
+
+    .janela ul {
+        width: 32%;
+    }
+
+    .form-quadrado .campo-envolvente {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+    }
+
+    .form-quadrado .form-campo {
+        margin-top: 0px;
+    }
+
+    .campo-pequeno {
+        width: calc(20% - 30px);
+
+    }
+
+    .field-grande {
+        width: calc(60% - 60px);
+
+    }
+
+    .extrato-de-transacoes {
+        justify-content: center;
+        display: flex;
+    }
+
+    .form-quadrado {
+        border: 1px solid #97979797;
+        margin: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: calc(100% - 10px);
+    }
+    
+    .linha-INVISIVEL {
+        display: none;
+    }
+    
+    .vt {
+        border-bottom: #979797 solid 1px;
+        padding: 1px;
+    }
+
+    .botoesdesk {
+        display: none;
+    }
+
+    .valor-final {
+        text-align: end;
+        font-weight: 700;
+    }
+
+    .janela {
+        padding-right: 40px;
+    }
+
+    .controle-financeiro {
+        display: contents;
+    }
+
+}
+
+@media screen and (min-width:1100px) {
+
+    .logo {
+        padding-left: 200px;
+
+    }
+
+    .janela {
+        padding-right: 53px;
+    }
+
+    .conteudo-pricipal {
+        display: flex;
+        padding-left: 200px;
+        padding-right: 200px;
+
+    }
+
+    .form-quadrado .campo-envolvente {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+    }
+    
+    .linha-INVISIVEL {
+        display: none;
+    }
+
+    .form-quadrado .form-campo {
+        margin: 0px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .form-quadrado button {
+        width: 100%;
+        margin: 0px;
+        margin-top: 20px;
+    }
+
+    .form-quadrado {
+        width: 400px;
+        padding: 20px;
+
+    }
+
+    .janela ul {
+        display: none;
+    }
+
+    .botoesdesk {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        background-color: white;
+        align-items: center;
+    }
+
+    .botoesdesk a,
+    .pipe {
+        padding: 8px;
+        text-decoration: none;
+        color: #333;
+        position: relative;
+        white-space: nowrap;
+        transition: 0.2s;
+    }
+
+    .hamburguer {
+        display: none;
+    }
+
+    .mercadoria-esquerda {
+        display: flex;
+    }
+
+    .extrato {
+        width: 100%;
+    }
+
+    .extrato-de-transacoes {
+        justify-content: center;
+        display: flex;
+    }
+
+    .janela {
+        display: none;
+    }
+
+    .vt {
+        border-bottom: #979797 solid 1px;
+        padding: 1px;
+    }
+
+    .valor-final {
+        text-align: end;
+        font-weight: 700;
+    }
+
+    .controle-financeiro {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+    }
+
+    .botoes3 {
+        padding-right: 200px;
+        color: #333;
+    }
+   
 }
