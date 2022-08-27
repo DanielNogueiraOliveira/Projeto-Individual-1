@@ -63,7 +63,7 @@ table {
     justify-content: center;
 }
 
-.form-quadrado .campo-envolvente {
+.form-quadrado {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -99,7 +99,8 @@ table {
 }
 
 .form-quadrado h1 {
-    display: none;
+        text-align: center;
+        font-size: 18px;
 
 }
 
@@ -179,9 +180,12 @@ table {
 }
 
 .text-controle {
-
-    font-size: 20px;
-    padding-left: 22px;
+        position: absolute;
+        font-size: 20px;
+        padding-left: 22px;
+        left: calc(50% - 411px/2 - 0.5px);
+        display: flex;
+        text-align: center;
 
 }
 
@@ -243,6 +247,14 @@ table {
         justify-content: initial;
         max-width: 1112px;
     }
+    .text-controle{
+        position: absolute;
+        font-size: 20px;
+        padding-left: 22px;
+        left: calc(50% - 411px/2 - 0.5px);
+        display: flex;
+        text-align: center;
+    }
 
     .logo {
 
@@ -258,7 +270,7 @@ table {
         width: 32%;
     }
 
-    .form-quadrado .campo-envolvente {
+    .form-quadrado {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-end;
@@ -270,12 +282,12 @@ table {
     }
 
     .campo-pequeno {
-        width: calc(20% - 30px);
+        width: 600px;
 
     }
 
-    .field-grande {
-        width: calc(60% - 60px);
+    .campo-grande {
+        width:  600px;
 
     }
 
@@ -327,6 +339,19 @@ table {
 
     }
 
+    .text-controle{
+        position: absolute;
+        width: 411px;
+        height: 43px;
+        left: 82px;
+        top: 19px;
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+
+    }
+    
     .janela {
         padding-right: 53px;
     }
@@ -338,7 +363,7 @@ table {
 
     }
 
-    .form-quadrado .campo-envolvente {
+    .form-quadrado {
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
@@ -399,7 +424,10 @@ table {
     }
 
     .extrato {
-        width: 100%;
+        padding-left: 20px;
+        position: absolute;
+        width: 500px;
+        display: flow-root;
     }
 
     .extrato-de-transacoes {
@@ -422,7 +450,7 @@ table {
     }
 
     .controle-financeiro {
-        display: flex;
+        display: flex; 
         align-items: center;
         width: 100%;
 

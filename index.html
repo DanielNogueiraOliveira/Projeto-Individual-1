@@ -24,13 +24,13 @@
                     <div class="deskbt"><a>Cadastro de transações</a></div>
                     <span class="pipe">|</span>
                     <div class="deskbt"><a href="">Limpar dados</a></div>
-                    <span class="pipe"></span>
-                    <div class="deskbt"><a></a></div>
+                    <span class="pipe">|</span>
+                    <div class="deskbt"><a href="">Configuraçoes</a></div>
                 </div>
                 <div class="janela">
                     <div>
                         <div>
-                        <img class="hamburguer" src="assets/hamburguer icon.png">
+                            <img class="hamburguer" src="assets/hamburguer icon.png">
                         </div>
                     </div>
                     <div>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
     </header>
 
     <div class="conteudo-pricipal">
@@ -59,7 +59,7 @@
                         <option name="venda" value="+">Venda</option>
                     </select>
 
-                    <div class="form-campo field-grande">
+                    <div class="form-campo campo-grande">
                         <label>Nome da mercadoria</label></br>
                         <input name="nome" required="" type="text" placeholder="Mercadoria" value="">
                     </div>
@@ -77,47 +77,48 @@
     <hr class="linha-INVISIVEL">
     </hr>
 
-    <section class="Extrato">
-        <div class="extrato-de-transacoes" >
-            <p>
-            <h3>Extrato de transações</h3>
-            </p>
+    <section>
+        <div class="extrato">
+            <div class="extrato-de-transacoes">
+                <p>
+                <h3>Extrato de transações</h3>
+                </p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="mercadoria-esquerda">Mercadoria</th>
+                        <th class="valor">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>+ Lorem ipsum dolor sit amet consectetur </td>
+                        <td class="valor">R$ 12.999,99</td>
+                    </tr>
+                    <tr>
+                        <td>- Quis nostrud exercitation</td>
+                        <td class="valor">R$ 99,99</td>
+                    </tr>
+                    <tr>
+                        <td>+ Lorem ipsum </td>
+                        <td class="valor">R$ 9,99</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="vt" id="lc"></td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td class="total-esquerda">Total</td>
+                        <td class="valor-final">R$ 12.909,99 <br>[Lucro]</br></td>
+                    </tr>
+                </tbody>
+
+            </table>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th class="mercadoria-esquerda">Mercadoria</th>
-                    <th class="valor">Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>+ Lorem ipsum dolor sit amet consectetur </td>
-                    <td class="valor">R$ 12.999,99</td>
-                </tr>
-                <tr>
-                    <td>- Quis nostrud exercitation</td>
-                    <td class="valor">R$ 99,99</td>
-                </tr>
-                <tr>
-                    <td>+ Lorem ipsum </td>
-                    <td class="valor">R$ 9,99</td>
-                </tr>
-
-                <tr>
-                    <td colspan="2" class="vt" id="lc"></td>
-
-                </tr>
-
-
-                <tr>
-
-                    <td class="total-esquerda">Total</td>
-                    <td class="valor-final">R$ 12.909,99 <br>[Lucro]</br></td>
-                </tr>
-            </tbody>
-
-        </table>
     </section>
 
 </body>
