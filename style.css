@@ -6,17 +6,11 @@ body {
 }
 
 .texto-imagem {
-    width: 100%;
+   width: 100%;
     display: flex;
-    justify-content: inherit;
-    align-items: center;
-    padding-right: 22px;
-        max-width: 1112;
 }
 
-.linha-INVISIVEL {
-    margin-bottom: 1px;
-}
+
 
 .extrato-de-transacoes {
     justify-content: center;
@@ -65,30 +59,38 @@ table {
     margin: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    width: calc(100% - 10px);
-}
-
-.form-quadrado {
-    width: 100%;
+    align-items: center;
+    width: 95%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
+.campos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .form-campo {
     display: flex;
     flex-direction: column;
     margin: 20px 20px 0px 20px;
+    width: 100%;
 }
 
-.form-quadrado button {
+.button {
     margin-top: 19.78px;
     background: #333;
     color: white;
+    width: 200px;
     margin-left: 20px;
     margin-right: 20px;
     line-height: 22px;
     margin: 22px;
+
+}
+.botao-adicionar{
+    display: flex;
+    justify-content: flex-end;
 
 }
 
@@ -114,56 +116,30 @@ table {
     height: 35px;
     padding-right: 20px;
 }
+.deskbt{
+    color: #E0E0E0;
+}
 .x{
+    display: none;
     padding-left: 22px;
 }
-.janela {
-    padding-right: 27px;
-}
-
-.janela ul {
-    list-style-type: none;
-    background-color: #333;
-    color: white;
+.menu{
     position: fixed;
+    top: 0;
+    right: 0;
     height: 100%;
-    width: 85.4%;
-    right: 0px;
-    top: 0px;
-    margin: 0px;
-    padding: 20px 0;
-    font-size: 16px;
-    display: none;
-    z-index: 2;
-}
-
-.janela ul li:nth-child(1) {
-    text-align: left;
-}
-
-.janela ul li {
-    text-align: right;
-    margin: 7px 0;
-    padding: 0 20px;
-
-}
-
-.janela ul li:hover {
-    background-color: #c4c4c4;
-    color: #333;
-}
-
-.janela ul li:nth-child(1) {
+    width: 33%;
     background-color: #333;
-    color: white;
 }
 
-.janela:hover ul {
-    display: block;
-}
-
-.botoesdesk {
+.pipe{
     display: none;
+}
+
+.botoes-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 
@@ -178,16 +154,13 @@ table {
     height: 80px;
     background-color: #E0E0E0;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 20px;
+    justify-content: center;
 
 }
 
 .text-controle {
-        position: absolute;
+        position: initial;
         font-size: 20px;
-        padding-left: 178px;
         padding-right: 179px;
         left: calc(50% - 411px/2 - 0.5px);
         display: flex;
@@ -225,26 +198,28 @@ table {
 }
 
 .controle-financeiro {
-    display: contents;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .rodape{
-    position: absolute;
+    position: initial;
     width: 100%;
     height: 15px;
    
 
     background: #333333;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
     .cabecalho {
         width: 100%;
     }
 
     .form-quadrado h1 {
-        display: block;
-        text-align: center;
-        font-size: 18px;
+        display: none;
+        
     }
 
     .conteudo-pricipal {
@@ -262,11 +237,8 @@ table {
         max-width: 1112px;
     }
     .text-controle{
-        position: absolute;
+        position: inherit;
         font-size: 20px;
-        padding-left: 178px;
-        padding-right: 179px;
-        left: calc(50% - 411px/2 - 0.5px);
         display: flex;
         text-align: center;
         align-items: center;
@@ -315,24 +287,36 @@ table {
     }
 
     .form-quadrado {
-        border: 1px solid #97979797;
+        border: 0;
+        border-bottom: 1px solid #97979797;
         margin: 20px;
         padding-top: 20px;
         padding-bottom: 20px;
         width: calc(100% - 10px);
     }
+    .campos{
+        display: flex;
+        flex-direction: column;
+    } 
     
-    .linha-INVISIVEL {
-        display: none;
-    }
     
     .vt {
         border-bottom: #979797 solid 1px;
         padding: 1px;
     }
-
-    .botoesdesk {
+    .x{
         display: none;
+        padding-left: 22px;
+    }
+    .pipe{
+        display: none;
+    }
+
+    .menu{
+        width: 90%;
+    }
+    .botoes-menu {
+        align-items: center;
     }
 
     .valor-final {
@@ -345,12 +329,15 @@ table {
     }
 
     .controle-financeiro {
-        display: contents;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 
 }
 
-@media screen and (min-width:1100px) {
+@media screen and (min-width:1112px) {
 
     .logo {
         padding-left: 22px;
@@ -358,7 +345,7 @@ table {
     }
 
     .text-controle{
-        position: sticky;
+        position: initial;
         width: 411px;
         left: 5px;
         padding-left: 20px;
@@ -368,14 +355,15 @@ table {
 
     }
     
-    .janela {
-        padding-right: 53px;
+    .texto-imagem {
+        width: 100%;
+        display: flex;
+        padding-right: 40px;
     }
 
     .conteudo-pricipal {
         display: flex;
-        padding-left: 200px;
-        padding-right: 200px;
+        justify-content: center;
 
     }
 
@@ -385,10 +373,22 @@ table {
         justify-content: center;
 
     }
-    
-    .linha-INVISIVEL {
-        display: none;
+
+    .campos{
+        display: flex;
+        flex-direction: column;
+    } 
+
+    .campo-pequeno {
+        width: 600px;
+
     }
+
+    .campo-grande {
+        width:  600px;
+
+    }
+
 
     .form-quadrado .form-campo {
         margin: 0px;
@@ -396,7 +396,7 @@ table {
         width: 100%;
     }
 
-    .form-quadrado button {
+    .button {
         width: 100%;
         margin: 0px;
         margin-top: 20px;
@@ -408,20 +408,23 @@ table {
 
     }
 
-    .janela ul {
+    .x{
         display: none;
+        padding-left: 22px;
     }
 
-    .botoesdesk {
+    .botoes-menu {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         background-color: white;
         align-items: center;
     }
+    .pipe{
+        display: block;
+    }
 
-    .botoesdesk a,
+    .botoes-menu a,
     .pipe {
         padding: 8px;
         text-decoration: none;
@@ -441,9 +444,8 @@ table {
 
     .extrato {
         padding-left: 20px;
-        position: absolute;
-        width: 500px;
-        display: flow-root;
+        width: 100%;
+        max-width: 635px;
     }
 
     .extrato-de-transacoes {
@@ -466,15 +468,19 @@ table {
     }
 
     .controle-financeiro {
-        display: flex; 
+        display: flex;
         align-items: center;
+        justify-content: center;
         width: 100%;
 
     }
 
-    .botoes3 {
-        padding-right: 200px;
+    .menu {
         color: #333;
+        top: 24px;
+        right: 268px;
+        height: 0;
+        width: 430px;
     }
    .rodape{
     display: none;
