@@ -16,6 +16,9 @@ ul{
     list-style: none;
     padding-inline-start: 0;
 }
+input[type=checkbox] {
+    display: none;
+}
 
 
 .texto-imagem {
@@ -91,15 +94,10 @@ table {
 }
 
 .button {
-    margin-top: 19.78px;
-    background: #333;
-    color: white;
-    width: 200px;
-    margin-left: 20px;
-    margin-right: 20px;
-    line-height: 22px;
-    margin: 22px;
-
+        background: #333;
+        color: white;
+        width: 200px;
+        margin: 22px;
 }
 .botao-adicionar{
     display: flex;
@@ -130,21 +128,19 @@ table {
     padding-right: 20px;
 }
 
-#chec{
+
+
+.menu{ 
     display: none;
-}
-.x{
-    display: none;
-    padding-left: 22px;
-}
-.menu{
     position: fixed;
     top: 0;
     right: 0;
     height: 100%;
     width: 33%;
     background-color: #333;
-
+}
+input[type="checkbox"]:checked ~ div {
+   display: block;
 }
 
 .botoes-menu {
@@ -152,7 +148,11 @@ table {
     flex-direction: column;
     margin-right: 10px;
 }
-
+ .x{
+    padding: 22px;
+    top: 30px;
+    color: #E0E0E0;
+ }
 
 /*
 .botoes-menu li:hover {
@@ -289,18 +289,23 @@ table {
 
     }
 
-    .form-quadrado .form-campo {
-        margin-top: 0px;
+    .form-campo{
+        margin: 0;
     }
-
-    .campo-pequeno {
-        width: 600px;
-
-    }
-
     .campo-grande {
-        width:  600px;
+        width:  92%;
 
+    }
+
+    .button{
+        width: 93%;
+        margin: 0;
+        margin-top: 22px;
+    }
+
+    .botao-adicionar{
+        display: flex;
+        justify-content: flex-start;
     }
 
     .extrato-de-transacoes {
@@ -326,15 +331,10 @@ table {
         border-bottom: #979797 solid 1px;
         padding: 1px;
     }
-    .x{
-        display: none;
-        padding-left: 22px;
-    }
-
 
     .menu{
         width: 90%;
-    }
+  }
 
 
     .valor-final {
@@ -424,9 +424,11 @@ table {
 
     }
 
+    .menu{
+        display: block;
+    }
     .x{
         display: none;
-        padding-left: 22px;
     }
 
     .botoes-menu {
