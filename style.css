@@ -1,8 +1,8 @@
 
 a{ 
-text-decoration: none;
-color: rgb(255, 255, 255);
-padding: 20px, 5px;
+    text-decoration: none;
+    color: #fff;
+    padding: 20px, 5px;
 }
 
 
@@ -22,8 +22,9 @@ input[type=checkbox] {
 
 
 .texto-imagem {
-   width: 100%;
+    width: 100%;
     display: flex;
+    align-items: center;
 }
 
 
@@ -45,7 +46,7 @@ td {
     text-align: left;
     font-weight: 400;
     border-top: solid 1px #979797;
-
+    
 }
 
 .tabela {
@@ -53,7 +54,7 @@ td {
     padding-right: 20px;
     text-align: end;
     width: 100%;
-
+    
 }
 
 .mercadoria-esquerda {
@@ -94,15 +95,15 @@ table {
 }
 
 .button {
-        background: #333;
-        color: white;
-        width: 200px;
+    background: #333;
+    color: white;
+    width: 200px;
         margin: 22px;
-}
+    }
 .botao-adicionar{
     display: flex;
     justify-content: flex-end;
-
+    
 }
 
 .form-quadrado input,
@@ -117,9 +118,9 @@ table {
 }
 
 .form-quadrado h1 {
-        text-align: center;
-        font-size: 18px;
-
+    text-align: center;
+    font-size: 18px;
+    
 }
 
 
@@ -140,7 +141,7 @@ table {
     background-color: #333;
 }
 input[type="checkbox"]:checked ~ div {
-   display: block;
+    display: block;
 }
 
 .botoes-menu {
@@ -148,29 +149,26 @@ input[type="checkbox"]:checked ~ div {
     flex-direction: column;
     margin-right: 10px;
 }
- .x{
-    padding: 22px;
-    top: 30px;
-    color: #E0E0E0;
- }
-
-/*
-.botoes-menu li:hover {
-    background-color: #c4c4c4;
-    color: #333;
-}
-
-.botoes-menu li:nth-child(1) {
-    background-color: #333;
-    color: white;
-}
-*/
-
 
 .botoes-menu li{
     padding-bottom: 10px;
     text-align: end;
 }
+
+.botoes-menu li:hover {
+    background-color: #E0E0E0;
+
+}
+
+
+
+
+.x{
+    padding: 22px;
+    top: 30px;
+    color: #E0E0E0;
+}
+
 
 .conteudo-pricipal {
     padding-left: 20px;
@@ -188,12 +186,11 @@ input[type="checkbox"]:checked ~ div {
 }
 
 .text-controle {
-        position: initial;
-        font-size: 20px;
-        padding-right: 179px;
+        position: sticky;
+        font-size: 24px;
+        padding-left: 98px;
         left: calc(50% - 411px/2 - 0.5px);
         display: flex;
-        text-align: center;
 
 }
 
@@ -229,14 +226,13 @@ input[type="checkbox"]:checked ~ div {
 .controle-financeiro {
     display: flex;
     align-items: center;
-    justify-content: center;
     width: 100%;
 }
 
 .rodape{
     position: initial;
     width: 100%;
-    height: 15px;
+    height: 90%;
    
 
     background: #333333;
@@ -260,16 +256,6 @@ input[type="checkbox"]:checked ~ div {
     .texto-imagem {
         width: 100%;
         display: flex;
-        position: inherit;
-        align-items: center;
-        justify-content: initial;
-        max-width: 1112px;
-    }
-    .text-controle{
-        position: inherit;
-        font-size: 20px;
-        display: flex;
-        text-align: center;
         align-items: center;
     }
 
@@ -338,16 +324,13 @@ input[type="checkbox"]:checked ~ div {
 
 
     .valor-final {
+        font-size: 14px;
         text-align: end;
-        font-weight: 700;
     }
-
-
 
     .controle-financeiro {
         display: flex;
         align-items: center;
-        justify-content: center;
         width: 100%;
     }
 
@@ -356,15 +339,15 @@ input[type="checkbox"]:checked ~ div {
 @media screen and (min-width:1112px) {
 
     .logo {
-        padding-left: 22px;
+        padding-left: 38px;
         width: 40px;
     }
 
     .text-controle{
         position: initial;
+        padding-left: 0;
+        padding-right: 120px;
         width: 411px;
-        left: 5px;
-        padding-left: 20px;
         font-size: 20px;
         display: flex;
         align-items: center;
@@ -374,7 +357,7 @@ input[type="checkbox"]:checked ~ div {
     .texto-imagem {
         width: 100%;
         display: flex;
-        padding-right: 132px;
+        padding-right: 130px;
     }
 
     .conteudo-pricipal {
