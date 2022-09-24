@@ -1,0 +1,181 @@
+var extrato = [];
+if (localStorage.getItem("extrato")) {
+  extrato = JSON.parse(localStorage.getItem("extrato"));
+}
+
+
+function extratoHTML() {
+  let extrato = JSON.parse(localStorage.getItem("extrato"));
+  let tabela = document.querySelector("#tabela tbody");
+
+  if (extrato != null) {
+    tabela.innerHTML = extrato.map((extrato) => {
+      return (
+      `
+      <tr>
+        <td class="simbolo">+</td>
+        <td>`+ extrato.nomeMercadoria + `</td>
+        <td>${formatterCurrency(Number(extrato.valorMercadoria))}</td>
+      </tr>
+      `
+      )
+    }).join("");
+    mudarSinal();
+    totalExtrato();
+  }
+}
+
+ function mudarSinal() {
+    let extrato = JSON.parse(localStorage.getItem("extrato"));
+  
+    for (i = 0; i < extrato.length; i++) {
+      if (extrato[i].selecaoMercadoria == "compra") {
+        document.getElementsByClassName("simbolo")[i].innerHTML = "-";
+      } else {
+        document.getElementsByClassName("simbolo")[i].innerHTML = "+";
+      }
+    }
+  } 
+
+  function formatterCurrency(value) {
+    const valueFormat = value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+    return valueFormat;
+  }
+
+  var formatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    maximumFractionDigits: 2,
+  });
+
+  function totalExtrato() {
+    var total = 0;
+    let valorInput;
+  
+    for (produto in extrato) {
+      if (extrato[produto].selecaoMercadoria == "compra") {
+        valorInput = extrato[produto];
+        total -= Number(extrato[produto].valorMercadoria);
+      } else {
+        total += Number(extrato[produto].valorMercadoria);
+      }
+    }
+  
+     if (extrato.length > 0) {
+      document.querySelector("#tabela tfoot").innerHTML = `
+        <tr>
+          <td>Total</td>
+          <td>${formatter.format(total)}</td>
+        </tr>
+        `
+        document.querySelector("#tabela tfoot").innerHTML += `
+        <tr>
+          <td class="status-tabela">${Math.sign(total) > 0 ? "[LUCRO]" : "[PREJUÍZO]"}</td>
+        </tr>
+        `
+    }
+  }
+  
+  function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e){  
+    var sep = 0;  
+    var key = '';  
+    var i = j = 0;  
+    var len = len2 = 0;  
+    var strCheck = '0123456789';  
+    var aux = aux2 = '';  
+    var whichCode = (window.Event) ? e.which : e.keyCode;  
+    if (whichCode == 13 || whichCode == 8) return true;  
+    key = String.fromCharCode(whichCode); // Valor para o código da Chave  
+    if (strCheck.indexOf(key) == -1) return false; // Chave inválida  
+    len = objTextBox.value.length;  
+    for(i = 0; i < len; i++)  
+        if ((objTextBox.value.charAt(i) != '0') && (objTextBox.value.charAt(i) != SeparadorDecimal)) break;  
+    aux = '';  
+    for(; i < len; i++)  
+        if (strCheck.indexOf(objTextBox.value.charAt(i))!=-1) aux += objTextBox.value.charAt(i);  
+    aux += key;  
+    len = aux.length;  
+    if (len == 0) objTextBox.value = '';  
+    if (len == 1) objTextBox.value = '0'+ SeparadorDecimal + '0' + aux;  
+    if (len == 2) objTextBox.value = '0'+ SeparadorDecimal + aux;  
+    if (len > 2) {  
+        aux2 = '';  
+        for (j = 0, i = len - 3; i >= 0; i--) {  
+            if (j == 3) {  
+                aux2 += SeparadorMilesimo;  
+                j = 0;  
+            }  
+            aux2 += aux.charAt(i);  
+            j++;  
+        }  
+        objTextBox.value = '';  
+        len2 = aux2.length;  
+        for (i = len2 - 1; i >= 0; i--)  
+        objTextBox.value += aux2.charAt(i);  
+        objTextBox.value += SeparadorDecimal + aux.substr(len - 2, len);  
+    }  
+    return false;  
+  } 
+
+  function deletaLocalStorage() {
+    if(extrato.length <= 0) {
+        alert("Nenhum registro de transação");
+      } else {
+        let caixaTexto = confirm("Deseja excluir as transações?");
+      
+        if(caixaTexto == true) {
+          localStorage.clear();
+          alert("Transações excluídas");
+        } else {
+          alert("Exclusões canceladas");
+        }
+      }
+      extratoHTML();
+      paginaInicial();
+    }
+
+    let linkExcluir = document.getElementById("limpar");
+    linkExcluir.addEventListener("click", deletaLocalStorage)
+
+function validacao(event) {
+  event.preventDefault();
+  
+  var mercadoriaFormulario = document.getElementById("mercadoria").value;
+  var valorFormulario = document.getElementById("valor").value;
+
+
+  if(mercadoriaFormulario == "") {
+    alert("Preencha o nome da mercadoria");
+    document.getElementById("mercadoria").focus();
+    return false;
+  }
+
+  if(valorFormulario == "") {
+    alert("Preencha o valor");
+    document.getElementById("valor").focus();
+    return false;
+  }
+
+  extrato.push(
+    {
+      "nomeMercadoria": mercadoriaFormulario,
+      "valorMercadoria": valorFormulario
+      .replaceAll(".", "")
+      .replaceAll(",", "."),
+    }
+  );
+
+  let extratoString = JSON.stringify(extrato);
+  localStorage.setItem("extrato", extratoString);
+  extratoHTML();
+  paginaInicial();
+}
+
+
+
+    function paginaInicial() {
+        location.href="index.html"
+      }

@@ -194,10 +194,6 @@ input[type="checkbox"]:checked ~ div {
 
 }
 
-.total-esquerda {
-    padding: 1px;
-    font-weight: 700;
-}
 
 .texto-retangulo {
     height: 20px;
@@ -213,7 +209,7 @@ input[type="checkbox"]:checked ~ div {
 
 }
 
-.valor-final {
+.status-tabela {
     text-align: end;
     font-weight: 700;
 }
@@ -228,7 +224,11 @@ input[type="checkbox"]:checked ~ div {
     align-items: center;
     width: 100%;
 }
-
+.nenhuma-trasacao{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
 .rodape{
     position: fixed;
     width: 100%;
@@ -293,10 +293,7 @@ input[type="checkbox"]:checked ~ div {
         justify-content: flex-start;
     }
 
-    .extrato-de-transacoes {
-        justify-content: center;
-        display: flex;
-    }
+
 
     .form-quadrado {
         border: 0;
@@ -322,7 +319,7 @@ input[type="checkbox"]:checked ~ div {
   }
 
 
-    .valor-final {
+    .status-tabela {
         font-size: 14px;
         text-align: end;
     }
@@ -450,23 +447,20 @@ input[type="checkbox"]:checked ~ div {
         display: flex;
     }
 
-    .extrato {
+    .tabela-extrato {
         padding-left: 20px;
         width: 100%;
         max-width: 635px;
     }
 
-    .extrato-de-transacoes {
-        justify-content: center;
-        display: flex;
-    }
+
 
     .vt {
         border-bottom: #979797 solid 1px;
         padding: 1px;
     }
 
-    .valor-final {
+    .status-tabela {
         text-align: end;
         font-weight: 700;
     }

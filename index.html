@@ -27,15 +27,12 @@
                 <nav class="botoes-menu">
                     <label for="chec" class="x">X</label>
                     <ul>
-                        <li><a href="">Cadastro de transações</a></li>
-                        <li><a href="">Limpar dados</a></li>
+                        <li><a id="cadastro" href="#">Cadastro de transações</a></li>
+                        <li><a id="limpar" href="#">Limpar dados</a></li>
                         <li><a href="">Configuraçoes</a></li>
                     </ul>
                 </nav>
 
-
-
-                    
             </div>
         </div>
     </header>
@@ -46,7 +43,7 @@
             <div class="form-campo campo-pequeno">
                 <h1>Nova transação</h1>
                 
-                <form >
+                <form action="./index.html" onsubmit="validacao(event); return false">
                     <div class="campos">
                         <div class="form-campo campo-grande">
                             <label>Tipo de transação</label></br>
@@ -59,12 +56,12 @@
                         
                         <div class="form-campo campo-grande">
                             <label>Nome da mercadoria</label></br>
-                            <input name="nome" required="" type="text" placeholder="Mercadoria" value="">
+                            <input name="nome" required="" type="text" id="mercadoria" placeholder="Mercadoria" value="">
                         </div>
                         
                         <div class="form-campo campo-grande">
                             <label>Valor</label></br>
-                            <input type="number" name="valor" id="valor" required="" placeholder="R$0,00" value="">
+                            <input type="text" name="valor" id="valor" required="" placeholder="R$0,00" value="" onKeyPress="return(MascaraMoeda(this,'.',',',event))">
                         </div>
                     </div>
                     <div class="botao-adicionar">
@@ -77,8 +74,8 @@
 
     </hr>
 
-    <section class="extrato"style="width: 100%;">
-        <div class="extrato">
+    <section class="tabela-extrato" id="tabela" style="width: 100%;">
+        <div class="tabela-extrato">
             <div class="extrato-de-transacoes">
                 <p>
                 <h3>Extrato de transações</h3>
@@ -86,7 +83,6 @@
             </div>
             <table>
                 <thead>
-                        <th></th>
                         <th class="mercadoria-esquerda">Mercadoria</th>
                         <th class="valor">Valor</th>
                     </tr>
@@ -94,38 +90,18 @@
                 <tbody>
                     
                     <tr>
-                        <td style="width: 0;">+</td>
-                        <td>Lorem ipsum dolor sit amet consectetur</td>
-                        <td class="valor">R$ 12.999,99</td>
-                    </tr>
-                    <tr>
-                        <td style="width: 0;">-</td>
-                        <td> Quis nostrud exercitation</td>
-                        <td class="valor">R$ 99,99</td>
-                    </tr>
-                    <tr>
-                        <td style="width: 0;">+</td>
-                        <td>Lorem ipsum </td>
-                        <td class="valor">R$ 9,99</td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2" class="vt" id="lc"></td>
-
-                    </tr>
-
-
-                    <tr>
-                        <td></td>
-                        <td class="total-esquerda">Total</td>
-                        <td class="valor-final">R$ 12.909,99 <br>[Lucro]</br></td>
+                        <td class="nenhuma-trasacao"> Nenhuma transação cadastrada</td>
                     </tr>
                 </tbody>
+                <tfoot>
+                </tfoot>
 
             </table>
         </div>
     </section>
 
     <footer class="rodape"></footer>
+    <script src="index.js"></script>
+    <script>extratoHTML()</script>
 </body>
 </html>
