@@ -47,21 +47,21 @@
                     <div class="campos">
                         <div class="form-campo campo-grande">
                             <label>Tipo de transação</label></br>
-                            <select name="operacao" required>
-                                <option name="compra" value="-">Compra</option>
-                                <option name="venda" value="+">Venda</option>
+                            <select name="operacao" id="operacao">
+                                <option value="compra">Compra</option>
+                                <option  value="venda">Venda</option>
                             </select>
                         </div>
                         
                         
                         <div class="form-campo campo-grande">
                             <label>Nome da mercadoria</label></br>
-                            <input name="nome" required="" type="text" id="mercadoria" placeholder="Mercadoria" value="">
+                            <input name="nome" type="text" id="mercadoria" placeholder="Mercadoria" value="">
                         </div>
                         
                         <div class="form-campo campo-grande">
                             <label>Valor</label></br>
-                            <input type="text" name="valor" id="valor" required="" placeholder="R$0,00" value="" onKeyPress="return(MascaraMoeda(this,'.',',',event))">
+                            <input type="text" name="valor" id="valor" placeholder="R$0,00" value="" onKeyPress="return(MascaraMoeda(this,'.',',',event))">
                         </div>
                     </div>
                     <div class="botao-adicionar">
@@ -74,31 +74,33 @@
 
     </hr>
 
-    <section class="tabela-extrato" id="tabela" style="width: 100%;">
-        <div class="tabela-extrato">
-            <div class="extrato-de-transacoes">
-                <p>
-                <h3>Extrato de transações</h3>
-                </p>
-            </div>
-            <table>
-                <thead>
-                        <th class="mercadoria-esquerda">Mercadoria</th>
-                        <th class="valor">Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr>
-                        <td class="nenhuma-trasacao"> Nenhuma transação cadastrada</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                </tfoot>
+    <form id="form-extrato" class="tabela-extrato">
+        <section id="tabela" class="tabela-extrato">
+                <div class="extrato-de-transacoes">
+                    <p>
+                        <h3>Extrato de transações</h3>
+                    </p>
+                </div>
 
-            </table>
-        </div>
-    </section>
+                <table>
+                    <thead class="container-mercadoriadoria">
+                        <tr class="container-tabela">
+                            <th class="titulo-tabela">Mercadoria</th>
+                            <th class="titulo-tabela">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="container-tabela-3">
+                            <td class="nenhuma-trasacao"> Nenhuma transação cadastrada</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+    </form>
 
     <footer class="rodape"></footer>
     <script src="index.js"></script>

@@ -1,10 +1,4 @@
 
-a{ 
-    text-decoration: none;
-    color: #fff;
-    padding: 20px, 5px;
-}
-
 
 body {
     margin: 0;
@@ -40,36 +34,77 @@ input[type=checkbox] {
     width: 40px
 }
 
-.th,
-td {
-    padding: 8px;
-    text-align: left;
-    font-weight: 400;
-    border-top: solid 1px #979797;
-    
-}
-
-.tabela {
-    padding: 20px 20px 0px;
-    padding-right: 20px;
-    text-align: end;
-    width: 100%;
-    
-}
-
-.mercadoria-esquerda {
+#form-extrato{
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
 }
 
-
-table {
-    border-collapse: collapse;
+#tabela{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.container-tabela {
+    display: flex;
     width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0px;
+    border-bottom: 1px solid #979797;
 }
 
-.valor {
-    text-align: end;
+.container-tabela-2 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    border-bottom: 1px solid #979797;
+  }
+.container-tabela-3 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+.container-tabela tr {
+    border-bottom: 1px solid #979797;
+    border-collapse: collapse;
 }
+
+tbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+.titulo-tabela {
+    font-weight: bold;
+    margin: 0px 25px;
+  }
+  
+  .titulo-tabela:nth-child(2){
+    margin-right: 42px;
+  }
+
+.valor-total{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #979797;
+    margin-top: 2px;
+}
+.container-mercadoriadoria {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
 .form-quadrado {
     border: 1px solid #97979797;
@@ -150,14 +185,23 @@ input[type="checkbox"]:checked ~ div {
     margin-right: 10px;
 }
 
+.botoes-menu a{
+    text-decoration: none;
+    color: #fff;
+    padding: 20px, 5px;
+    display: block;
+    width: 100%;
+}
+
+.botoes-menu a:hover{
+    color: #333333;
+    background: #C4C4C4;
+    font-weight: 600;
+  }
+
 .botoes-menu li{
     padding-bottom: 10px;
     text-align: end;
-}
-
-.botoes-menu li:hover {
-    background-color: #E0E0E0;
-
 }
 
 
@@ -209,9 +253,39 @@ input[type="checkbox"]:checked ~ div {
 
 }
 
-.status-tabela {
-    text-align: end;
-    font-weight: 700;
+tfoot {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    font-weight: bold;
+}
+
+.corpo-tabela{
+    display: flex;
+    justify-content: flex-start;
+    height: auto;
+    padding: 6px 0px;
+    
+}
+
+.corpo-tabela:nth-child(1) {
+    margin: 0px 10px;
+    width: 8.25px;
+}
+
+.corpo-tabela:nth-child(2){
+    justify-content: flex-start;
+    width: 80%;
+    word-break: break-all;
+}
+
+.corpo-tabela:nth-child(3){
+     width: 34%;
+      margin-right: 10px;
+      justify-content: flex-end;
+      text-align: right;
+      word-break: break-all;
 }
 
 .vt {
@@ -307,22 +381,10 @@ input[type="checkbox"]:checked ~ div {
         display: flex;
         flex-direction: column;
     } 
-    
-    
-    .vt {
-        border-bottom: #979797 solid 1px;
-        padding: 1px;
-    }
 
     .menu{
         width: 90%;
   }
-
-
-    .status-tabela {
-        font-size: 14px;
-        text-align: end;
-    }
 
     .controle-financeiro {
         display: flex;
@@ -423,6 +485,7 @@ input[type="checkbox"]:checked ~ div {
     }
 
     .botoes-menu a {
+        display: initial;
         padding: 8px;
         text-decoration: none;
         color: #333;
@@ -443,9 +506,6 @@ input[type="checkbox"]:checked ~ div {
         display: none;
     }
 
-    .mercadoria-esquerda {
-        display: flex;
-    }
 
     .tabela-extrato {
         padding-left: 20px;
@@ -453,17 +513,6 @@ input[type="checkbox"]:checked ~ div {
         max-width: 635px;
     }
 
-
-
-    .vt {
-        border-bottom: #979797 solid 1px;
-        padding: 1px;
-    }
-
-    .status-tabela {
-        text-align: end;
-        font-weight: 700;
-    }
 
     .controle-financeiro {
         display: flex;
@@ -478,6 +527,10 @@ input[type="checkbox"]:checked ~ div {
        z-index: 1;
        height: 40px;
        width: 100%;
+    }
+
+    #form-extrato{
+        align-content: flex-start;
     }
    .rodape{
     display: none;

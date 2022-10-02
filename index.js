@@ -12,10 +12,10 @@ function extratoHTML() {
     tabela.innerHTML = extrato.map((extrato) => {
       return (
       `
-      <tr>
-        <td class="simbolo">+</td>
-        <td>`+ extrato.nomeMercadoria + `</td>
-        <td>${formatterCurrency(Number(extrato.valorMercadoria))}</td>
+      <tr class="container-tabela-2">
+        <td class="corpo-tabela simbolo">+</td>
+        <td class="corpo-tabela">`+ extrato.nomeMercadoria + `</td>
+        <td class="corpo-tabela">${formatterCurrency(Number(extrato.valorMercadoria))}</td>
       </tr>
       `
       )
@@ -66,7 +66,7 @@ function extratoHTML() {
   
      if (extrato.length > 0) {
       document.querySelector("#tabela tfoot").innerHTML = `
-        <tr>
+        <tr class="valor-total">
           <td>Total</td>
           <td>${formatter.format(total)}</td>
         </tr>
@@ -142,11 +142,12 @@ function extratoHTML() {
 
 function validacao(event) {
   event.preventDefault();
-  
+  var operacao = document.getElementById("operacao").value;
   var mercadoriaFormulario = document.getElementById("mercadoria").value;
   var valorFormulario = document.getElementById("valor").value;
 
 
+  
   if(mercadoriaFormulario == "") {
     alert("Preencha o nome da mercadoria");
     document.getElementById("mercadoria").focus();
@@ -161,6 +162,7 @@ function validacao(event) {
 
   extrato.push(
     {
+      "selecaoMercadoria": operacao,
       "nomeMercadoria": mercadoriaFormulario,
       "valorMercadoria": valorFormulario
       .replaceAll(".", "")
