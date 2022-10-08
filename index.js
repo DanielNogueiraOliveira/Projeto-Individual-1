@@ -125,7 +125,8 @@ function extratoHTML() {
         alert("Nenhum registro de transação");
       } else {
         let caixaTexto = confirm("Deseja excluir as transações?");
-      
+        
+
         if(caixaTexto == true) {
           localStorage.clear();
           alert("Transações excluídas");
@@ -173,7 +174,7 @@ function validacao(event) {
   let extratoString = JSON.stringify(extrato);
   localStorage.setItem("extrato", extratoString);
   extratoHTML();
-  paginaInicial();
+  event.target.reset()
 }
 
 
