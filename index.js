@@ -11,7 +11,17 @@ function extratoHTML() {
   let extrato = JSON.parse(localStorage.getItem("extrato"));
   let tabela = document.querySelector("#tabela tbody");
   
-  
+  document.querySelectorAll(".container-tabela-3").forEach((element) => {
+    element.remove();
+  });
+  if (extrato.length === "") {
+    document.getElementById("form-extrato").tabela.innerHTML = `
+    <tr>
+    <td class="nenhuma-transacao"> Nenhuma transação cadastrada</td>
+    </tr>
+    `
+    console.log(extrato.length === "");
+    }
 
   if  (extrato != null) {
     tabela.innerHTML = extrato.map((extrato) => {
