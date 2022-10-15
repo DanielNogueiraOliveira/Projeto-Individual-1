@@ -6,10 +6,14 @@ if (localStorage.getItem("extrato")) {
 
 
 function extratoHTML() {
+  var total = 0;
+  let valorInput;
   let extrato = JSON.parse(localStorage.getItem("extrato"));
   let tabela = document.querySelector("#tabela tbody");
+  
+  
 
-  if (extrato != null) {
+  if  (extrato != null) {
     tabela.innerHTML = extrato.map((extrato) => {
       return (
       `
@@ -21,14 +25,8 @@ function extratoHTML() {
       `
       )
     }).join("");
-    mudarSinal();
-    totalExtrato();
-  }
-}
 
- function mudarSinal() {
-    let extrato = JSON.parse(localStorage.getItem("extrato"));
-  
+
     for (i = 0; i < extrato.length; i++) {
       if (extrato[i].selecaoMercadoria == "compra") {
         document.getElementsByClassName("simbolo")[i].innerHTML = "-";
@@ -36,26 +34,7 @@ function extratoHTML() {
         document.getElementsByClassName("simbolo")[i].innerHTML = "+";
       }
     }
-  } 
 
-  function formatterCurrency(value) {
-    const valueFormat = value.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    });
-    return valueFormat;
-  }
-
-  var formatter = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    maximumFractionDigits: 2,
-  });
-
-  function totalExtrato() {
-    var total = 0;
-    let valorInput;
-  
     for (produto in extrato) {
       if (extrato[produto].selecaoMercadoria == "compra") {
         valorInput = extrato[produto];
@@ -64,7 +43,6 @@ function extratoHTML() {
         total += Number(extrato[produto].valorMercadoria);
       }
     }
-  
      if (extrato.length > 0) {
       document.querySelector("#tabela tfoot").innerHTML = `
         <tr class="valor-total">
@@ -79,6 +57,22 @@ function extratoHTML() {
         `
     }
   }
+}
+
+
+  function formatterCurrency(value) {
+    const valueFormat = value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+    return valueFormat;
+  }
+
+  var formatter = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    maximumFractionDigits: 2,
+  });
   
   function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e){  
     var sep = 0;  
