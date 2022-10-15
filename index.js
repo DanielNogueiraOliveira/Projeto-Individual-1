@@ -4,6 +4,7 @@ if (localStorage.getItem("extrato")) {
 }
 
 
+
 function extratoHTML() {
   let extrato = JSON.parse(localStorage.getItem("extrato"));
   let tabela = document.querySelector("#tabela tbody");
@@ -121,25 +122,36 @@ function extratoHTML() {
   } 
 
   function deletaLocalStorage() {
-    if(extrato.length <= 0) {
-        alert("Nenhum registro de transação");
-      } else {
-        let caixaTexto = confirm("Deseja excluir as transações?");
-        
+    let mercadorias = document.querySelectorAll('.container-tabela-2')
+    let totais = document.querySelectorAll('.valor-total')
+    let status = document.querySelectorAll('.status-tabela')
 
-        if(caixaTexto == true) {
-          localStorage.clear();
-          alert("Transações excluídas");
-        } else {
-          alert("Exclusões canceladas");
-        }
-      }
-      extratoHTML();
-      paginaInicial();
+
+    if (confirm("Deseja remover os dados da tabela?")) {
+
+      mercadorias.forEach((element) => {
+        element.remove();
+      })
+
+      totais.forEach((element) => {
+        element.remove();
+      })
+      status.forEach((element) => {
+        element.remove();
+      })
+      
+      extrato = []
+      localStorage.setItem('extrato', JSON.stringify(extrato))
+      alert("Transações excluídas");
+    }
+    else{
+      alert("Exclusões canceladas");
+    }
     }
 
     let linkExcluir = document.getElementById("limpar");
     linkExcluir.addEventListener("click", deletaLocalStorage)
+      
 
 function validacao(event) {
   event.preventDefault();
@@ -177,8 +189,3 @@ function validacao(event) {
   event.target.reset()
 }
 
-
-
-    function paginaInicial() {
-        location.href="index.html"
-      }
