@@ -11,32 +11,21 @@ function extratoHTML() {
   let extrato = JSON.parse(localStorage.getItem("extrato"));
   let tabela = document.querySelector("#tabela tbody");
   
-  document.querySelectorAll(".container-tabela-3").forEach((element) => {
-    element.remove();
-  });
-  if (extrato.length === "") {
-    document.getElementById("form-extrato").tabela.innerHTML = `
-    <tr>
-    <td class="nenhuma-transacao"> Nenhuma transação cadastrada</td>
-    </tr>
-    `
-    console.log(extrato.length === "");
-    }
-
-  if  (extrato != null) {
+  
+  if  (extrato !== 0) {
     tabela.innerHTML = extrato.map((extrato) => {
+
       return (
-      `
-      <tr class="container-tabela-2">
+        `
+        <tr class="container-tabela-2">
         <td class="corpo-tabela simbolo">+</td>
         <td class="corpo-tabela">`+ extrato.nomeMercadoria + `</td>
         <td class="corpo-tabela">${formatterCurrency(Number(extrato.valorMercadoria))}</td>
       </tr>
       `
       )
-    }).join("");
-
-
+    })
+    
     for (i = 0; i < extrato.length; i++) {
       if (extrato[i].selecaoMercadoria == "compra") {
         document.getElementsByClassName("simbolo")[i].innerHTML = "-";
@@ -44,7 +33,7 @@ function extratoHTML() {
         document.getElementsByClassName("simbolo")[i].innerHTML = "+";
       }
     }
-
+    
     for (produto in extrato) {
       if (extrato[produto].selecaoMercadoria == "compra") {
         valorInput = extrato[produto];
@@ -53,20 +42,27 @@ function extratoHTML() {
         total += Number(extrato[produto].valorMercadoria);
       }
     }
-     if (extrato.length > 0) {
+    if (extrato.length > 0) {
       document.querySelector("#tabela tfoot").innerHTML = `
         <tr class="valor-total">
-          <td>Total</td>
-          <td>${formatter.format(total)}</td>
+        <td>Total</td>
+        <td>${formatter.format(total)}</td>
         </tr>
         `
         document.querySelector("#tabela tfoot").innerHTML += `
         <tr>
-          <td class="status-tabela">${Math.sign(total) > 0 ? "[LUCRO]" : "[PREJUÍZO]"}</td>
+        <td class="status-tabela">${Math.sign(total) > 0 ? "[LUCRO]" : "[PREJUÍZO]"}</td>
         </tr>
         `
+      }
+      if (tabela.length == null) {
+    tabela.innerHTML += `
+    <tr class="container-tabela-3">
+    <td class="nenhuma-transacao"> Nenhuma transação cadastrada</td>
+    </tr>
+    `
     }
-  }
+    }
 }
 
 
@@ -132,7 +128,6 @@ function extratoHTML() {
 
 
     if (confirm("Deseja remover os dados da tabela?")) {
-
       mercadorias.forEach((element) => {
         element.remove();
       })
