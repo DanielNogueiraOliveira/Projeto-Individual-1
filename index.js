@@ -11,10 +11,16 @@ function extratoHTML() {
   let extrato = JSON.parse(localStorage.getItem("extrato"));
   let tabela = document.querySelector("#tabela tbody");
   
-  
-  if  (extrato !== 0) {
-    tabela.innerHTML = extrato.map((extrato) => {
+  if (extrato.length == 0) {
+    tabela.innerHTML += `
+    <tr class="container-tabela-3">
+    <td class="nenhuma-transacao"> Nenhuma transação cadastrada</td>
+    </tr>
+    `
+    }
 
+  if  (extrato.length !== 0) {
+    tabela.innerHTML = extrato.map((extrato) => {
       return (
         `
         <tr class="container-tabela-2">
@@ -24,7 +30,7 @@ function extratoHTML() {
       </tr>
       `
       )
-    })
+    }).join('');
     
     for (i = 0; i < extrato.length; i++) {
       if (extrato[i].selecaoMercadoria == "compra") {
@@ -55,13 +61,7 @@ function extratoHTML() {
         </tr>
         `
       }
-      if (tabela.length == null) {
-    tabela.innerHTML += `
-    <tr class="container-tabela-3">
-    <td class="nenhuma-transacao"> Nenhuma transação cadastrada</td>
-    </tr>
-    `
-    }
+      
     }
 }
 
@@ -146,6 +146,7 @@ function extratoHTML() {
     else{
       alert("Exclusões canceladas");
     }
+    extratoHTML()
     }
 
     let linkExcluir = document.getElementById("limpar");

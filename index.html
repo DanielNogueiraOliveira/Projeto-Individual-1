@@ -56,12 +56,12 @@
                         
                         <div class="form-campo campo-grande">
                             <label>Nome da mercadoria</label></br>
-                            <input name="nome" type="text" id="mercadoria" placeholder="Mercadoria" value="">
+                            <input name="mercadoria" type="text" id="mercadoria" placeholder="Mercadoria" value="">
                         </div>
                         
                         <div class="form-campo campo-grande">
                             <label>Valor</label></br>
-                            <input type="text" name="valor" id="valor" placeholder="R$0,00" value="" onKeyPress="return(MascaraMoeda(this,'.',',',event))">
+                            <input type="text" name="valor" id="valor" placeholder="R$0,00" value="R$" onkeypress="return(MascaraMoeda(this,'.',',',event))">
                         </div>
                     </div>
                     <div class="botao-adicionar">
